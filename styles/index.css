@@ -1,0 +1,47 @@
+:root {
+    --font-family: "Red Hat Display", sans-serif;
+    --second-family: "Roboto", sans-serif;
+    --third-family: "Montserrat", sans-serif;
+  }
+  .header {
+    display: grid;
+  }
+  .main_menu {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 20px;
+    color: #7e7f86;
+  }
+  .greetings {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 24px;
+    color: #7e7f86;
+  }
+  h1 {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 60px;
+    font-style: bold;
+    color: #25202f;
+  }
+  p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 24px;
+    color: #25202f;
+  }
+  h2 {
+
+  }
+  article {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 200%;
+    color: #47444e;
+  }
+/* font-family: var(--font-family);
+font-weight: 500;
+font-size: 20px;
+color: #25202f; */
