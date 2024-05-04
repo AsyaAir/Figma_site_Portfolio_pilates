@@ -4,35 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link href="./styles/fonts/Red_Hat_Display/static/RedHatDisplay-Regular.ttf" rel="stylesheet">
-    <link href="./styles/fonts/Red_Hat_Display/static/RedHatDisplay-Medium.ttf" rel="stylesheet">
-    <link href="./styles/fonts/Red_Hat_Display/static/RedHatDisplay-Bold.ttf" rel="stylesheet">
-    <link href="./styles/fonts/Roboto/Roboto-Regular.ttf" rel="stylesheet">
-    <link href="./styles/fonts/Roboto/Roboto-Medium.ttf" rel="stylesheet">
-    <link href="./styles/fonts/Montserrat/static/Montserrat-Bold.ttf" rel="stylesheet">
+    <!-- Подключение google шрифтов по макету в Figma-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Подключение CSS файла стилей -->
+    <link rel="stylesheet" href="/styles/index.css">
 </head>
 <body>
     <header class="header">
         <!-- ?нужен ли этот div? -->
-        <div>
-            <img src="./assets/logo.png" alt="logo">
-            <nav class="main_menu">
-                <p>About</p>
-                <p>Work</p>
-                <p>Scheduele</p>
-                <p>Contacts</p>
-            </nav>
-            <img src="./assets/burger_menu.png" alt="burger_menu">
-            <div class="gteetings">
-                <p>Hello,</p>
-                <h1>Glenda Rorick</h1>
-                <p>a freelance pilates trainer</p>
-                <!-- Кнопка Let's talk -->
+
+            <!-- Вставка текста (буква G от имени Glenda) поверх картинки. -->
+            <div class="text_G">
+                <p class="text_G_over">G</p>
             </div>
-            <img src="./assets/back_color.png" alt="photo">
-            <img src="./assets/photo.png" alt="photo">
-        </div>
+            <!-- по старому <img src="./assets/logo.png" alt="logo"> -->
+            
+            <nav class="main_menu">
+                <ul class="main_menu">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">Scheduele</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+            
+            <div class="greetings_area">
+                <div class="gteetings">
+                    <p class="hello">Hello,</p>
+                    <h1>Glenda Rorick</h1>
+                    <p class="profession">a freelance pilates trainer</p>
+<!-- Кнопка Let's talk -->
+                </div>
+            </div>
+            
+            <div class="photo_on_background">
+                <img src="/assets/photo_Glenda.png" alt="Glenda Rorick" class="photo">
+            </div>
+            
+            <div class="burger_menu">
+            <!-- Бургер меню в последствии будет настоящим, а не картинкой -->
+            <a class="burger_menu_link" href="#"><img src="/assets/burger_menu.png" alt="burger_menu"></a>
+            </div>
     </header>
+
     <section class="section_1_classes">
         <!-- ?нужен ли этот div? -->
         <div>
