@@ -12,15 +12,15 @@
     <link rel="stylesheet" href="/styles/index.css">
 </head>
 <body>
+    <!-- 1. Шапка сайта: лого, навигация, фото, приветсивие, коммуникация -->
     <header class="header">
-        <!-- ?нужен ли этот div? -->
-
-            <!-- Вставка текста (буква G от имени Glenda) поверх картинки. -->
-            <div class="text_G">
-                <p class="text_G_over">G</p>
-            </div>
+                    <!-- 1.1. Логотип: вставка текста (буква G от имени Glenda) поверх картинки. -->
+                    <div class="text_G">
+                    <p class="text_G_over">G</p>
+                    </div>
             <!-- по старому <img src="./assets/logo.png" alt="logo"> -->
-            
+        
+            <!--1.2. Навигация-главное меню  -->
             <nav class="main_menu">
                 <ul class="main_menu">
                     <li><a href="#">About</a></li>
@@ -30,73 +30,124 @@
                 </ul>
             </nav>
             
+            <!-- 1.3. Приветствие с кнопкой коммуникации et's talk-->
             <div class="greetings_area">
                 <div class="gteetings">
                     <p class="hello">Hello,</p>
                     <h1>Glenda Rorick</h1>
                     <p class="profession">a freelance pilates trainer</p>
-<!-- Кнопка Let's talk -->
+                    <button class="talk">Let's talk</button>
                 </div>
             </div>
             
+            <!-- 1.4. Фото тренера на фоне -->
             <div class="photo_on_background">
-                <img src="/assets/photo_Glenda.png" alt="Glenda Rorick" class="photo">
+                <img src="./assets/photo_Glenda.png" alt="Glenda Rorick" class="photo">
             </div>
             
-            <div class="burger_menu">
-            <!-- Бургер меню в последствии будет настоящим, а не картинкой -->
-            <a class="burger_menu_link" href="#"><img src="/assets/burger_menu.png" alt="burger_menu"></a>
-            </div>
+            <!-- 1.5. Бургер меню -->
+            <button class="burger"></button>
     </header>
+    
+    <!-- 2. Основной контент сайта -->
+    <main>
+        <!-- 2.1. Секция сайта 1. Classes -->
+        <section class="section_1_classes">
+            <div class="p_section_1">
+                <p class="p_nav">Classes</p>
+                <h2>What actually I love to do</h2>\
+            </div>  
+                <img src="./assets/Background_mini.svg" alt="mini">
+                <h3 class="classes_1">Privet classes</h3>
+                <article class="classes_1_article">If you are looking to accelerate your health and well-being, the 1:1 classes are the fastest way to get results. With individual sessions, we can exercise at your level and progress the difficulty as you improve. Private sessions also allow you to develop a rapport with me so I will know when you are having a good day and be pushed a bit further and gain an understanding of what motivates you helping you to gain the best results. </article>
+                <img src="./assets/Background_mini.svg" alt="mini">
+                <h3 class="classes_2">Group classes</h3>
+                <article class="classes_2_article">Private Pilates session with me for three people. The session is guided by the group's wellness goals. The session includes a mix of reformer, tower, barrel equipment, and/or small props.</article>
+                <img src="./assets/Background_mini.svg" alt="mini">
+                <h3 class="classes_3">Public classes</h3>
+                <article class="classes_3_article">Mixed Level Pilates classes in Trumbull Physical Therapy and Welness Ceter. We are a synergistic group of independent practitioners whose mission is to provide individualized healing in a supportive environment. </article>
+        </section>
+        <!-- 2.2. Секция сайта 2. About me -->
+        <section class="section_2_about">
+        <!-- ?нужен ли этот div? -->
+            <div class="p_section_2">
+                <p class="p_nav">About Me</p>
+                <div>
+                    <h3>Work skills</h3>
+                    <img src="/" alt="1">
+                    <article>
+                        <ul>
+                            <li>Pilates Mat & Reformer Techniques</li>
+                            <li>Exercise Program Development</li>
+                            <li>Anatomy and Physiology Knowledge</li>
+                            <li>Client Fitness Assessments</li>
+                            <li>Group Class Instruction</li>
+                            <li>Customer Relationship Management</li>
+                        </ul>
+                        </article>
+                </div>
+                <div>
+                    <h3>Work experience</h3>
+                    <img src="/" alt="2">
+                    <article>
+                        <ul>
+                            <li>Fitness Centers & Gyms</li>
+                            <li>Pilates Studios</li>
+                            <li>Physical Therapy Clinics</li>
+                            <li>Community Centers</li>
+                            <li>Online Coaching Platforms</li>
+                            <li>Private In-Home Sessions</li>
+                        </ul>
+                    </article>
+                </div>
+                <h3>Education</h3>
+                <img src="/" alt="3">
+                <article>
+                    <ul>
+                        <li> Certificat of National Pilates Program (NPCP)</li>
+                        <li>Pilates Method Alliance (PMA) Certificat</li>
+                        <li>Physical Therapy Clinics</li>
+                        <li>Certificat of Pilates Method Alliance (PMA) </li>
+                        <li>Certificat of Balanced Body Comprehensive</li>
+                        <li>Certificat of STOTT Pilates</li>
+                        <li>Certificat of Peak Pilates Comprehensive</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+        </section>
 
-    <section class="section_1_classes">
-        <!-- ?нужен ли этот div? -->
-        <div>
-            <p>Classes</p>
-            <h2>What actually I love to do</h2>
-            <h3>Privet classes</h3>
-            <h2>Group classes</h2>
-            <h2>Public classes</h2>
-            <h2></h2>
-            <article>1</article>
-            <article>2</article>
-            <article>3</article>   
-        </div>
-    </section>
-    <section class="section_2_about">
-        <!-- ?нужен ли этот div? -->
-        <div>
-            <p>About Me</p>
-            <h2>Work experience</h2>
-            <h3>Work in sports clubs</h3>
-            <h3>Work in pilates clubs</h3>
-            <h3>A freelance pilates trainer</h3>
-            <h3>Education</h3>
-            <article>1</article>
-            <article>2</article>
-            <article>3</article> 
-            <article>3</article>
-            <img src="/" alt="1">
-            <img src="/" alt="2">
-            <img src="/" alt="3"> 
-            <img src="/" alt="3"> 
-        </div>
-    </section>
-    <section>3</section>
-        <nav>/</nav>
-        <h1></h1>
-        <nav>//</nav>
-    <section>4</section>
-        <p>Contact Me</p>
-        <h2>Let me know if you want to talk about a potential collaboration or to be my client. 
-            I'm available for freelance work.</h2>
-        <!-- email -->
-        <form action="/">/</form>
-    <footer>footer
-        <h4>Let’s be Friends</h4>
-        <img src="./assets/back_color_mini.png" alt="4">
-        <img src="./assets/back_color_mini.png" alt="5">
-        <img src="./assets/back_color_mini.png" alt="6">
+        <!-- 2.3. Секция сайта 3. Scheduele -->
+        <section class="section_3_scheduele">
+            <div class="p_section_3">
+                <p class="p_nav">Scheduele</p>
+                <nav>/</nav>
+                <h1></h1>
+                <nav>//</nav>
+            </div>
+        </section>
+    
+         <!-- 2.4. Секция сайта 4. Contact Me -->
+        <section class="section_4_cntact">4
+            <div class="p_section_4">
+                <p class="p_nav">Contact Me</p>
+                <h2>Let me know if you want to talk about a potential collaboration or to be my client. 
+                    I'm available for freelance work.</h2>
+                <!-- email glendabrorick@gmail.com-->
+                <form action="/">/</form>
+            </div>
+        </section>
+    </main>
+
+        <!-- 3. Footer сайта со ссылками на соц.сети и навигацией -->
+        <footer>
+            <div class="p_section_5">
+                <h4>Let’s be Friends</h4>
+                <img src="./assets/back_color_mini.png" alt="4">
+                <img src="./assets/back_color_mini.png" alt="5">
+                <img src="./assets/back_color_mini.png" alt="6">
+            </div>
     </footer>
+
 </body>
 </html>
