@@ -9,145 +9,150 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Подключение CSS файла стилей -->
-    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body>
     <!-- 1. Шапка сайта: лого, навигация, фото, приветсивие, коммуникация -->
-    <header class="header">
-                    <!-- 1.1. Логотип: вставка текста (буква G от имени Glenda) поверх картинки. -->
-                    <div class="text_G">
-                    <p class="text_G_over">G</p>
-                    </div>
-            <!-- по старому <img src="./assets/logo.png" alt="logo"> -->
-        
+    <header>
+        <div class="section_1">
+            <!-- 1.1. Логотип: вставка текста (буква G от имени Glenda) поверх картинки. -->
+            <div class="text_G">
+                <p class="text_G_over">G</p>
+            </div>
             <!--1.2. Навигация-главное меню  -->
             <nav class="main_menu">
-                <ul class="main_menu">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Work</a></li>
-                    <li><a href="#">Scheduele</a></li>
-                    <li><a href="#">Contacts</a></li>
-                </ul>
+                <a href="#" class="nav_link">About</a>
+                <a href="#" class="nav_link">Classes</a>
+                <a href="#" class="nav_link">Education</a>
+                <a href="#" class="nav_link">Contacts</a>
             </nav>
-            
-            <!-- 1.3. Приветствие с кнопкой коммуникации et's talk-->
+            <!-- 1.3. Приветствие с кнопкой коммуникации Let's talk-->
             <div class="greetings_area">
-                <div class="gteetings">
-                    <p class="hello">Hello,</p>
-                    <h1>Glenda Rorick</h1>
-                    <p class="profession">a freelance pilates trainer</p>
-                    <button class="talk">Let's talk</button>
-                </div>
+                <p class="hello">Hello,</p>
+                <h1>Glenda Rorick</h1>
+                <p class="profession">a freelance pilates trainer</p>
+                <button class="talk">Let's talk</button>
             </div>
-            
-            <!-- 1.4. Фото тренера на фоне -->
+
             <div class="photo_on_background">
-                <img src="./assets/photo_Glenda.png" alt="Glenda Rorick" class="photo">
+                <img src="./assets/photo_Glenda.png" alt="Glenda Rorick" style="width: 80%;" class="photo">
             </div>
-            
             <!-- 1.5. Бургер меню -->
-            <button class="burger"></button>
-    </header>
-    
+                        <!-- <button class="burger"></button> -->
+<!-- Взято здесь: https://www.mobila.name/post/53eb5a219dcff -->
+<div class="burger_menu">
+<!-- Скрытый checkbox, отвечающий за переключение панели, должен быть в верхней части документа, лучше сразу после тега `<body>`
+    `id` атрибут предназначен для связки с атрибутом `for` тега <label>
+    Атрибут `hidden` указывает состояние «скрытый» у текущего элемента-->
+    <input type="checkbox" id="nav-toggle" hidden>
+    <!-- Выдвижную панель размещаете ниже флажка (checkbox), но не обязательно непосредственно после него, например
+    можно и в конце страницы-->
+    <nav class="nav">
+    <!-- Метка с именем `id` чекбокса в `for` атрибуте Символ Unicode 'TRIGRAM FOR HEAVEN' (U+2630)
+    Пустой атрибут `onclick` используем для исправления бага в iOS < 6.0
+    См: http://timpietrusky.com/advanced-checkbox-hack -->
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+        <!-- Здесь размещаете любую разметку, если это меню, то скорее всего неупорядоченный список <ul>-->
+        <ul>
+            <a href="#1" class="nav_hide">About Me</a>
+            <a href="#2" class="nav_hide">Classes</a>
+            <a href="#3" class="nav_hide">Education</a>
+            <a href="#4" class="nav_hide">Contact Me</a>
+            <a href="#5" class="nav_hide">Home</a>
+        </ul>
+    </nav>
+    <!-- Маска (затемнение) основного контента при включенной панели по-умолчанию данная фишка не используется, если оно вам надо,
+		просто расккоментируйте div-контейнер ниже
+    <div class="mask-content"></div>-->
+    <!-- Далее размещаем любую разметку, много слов, картинки и т.д...-->
+
+</div>
+        </div>
+    </header>  
     <!-- 2. Основной контент сайта -->
     <main>
-        <!-- 2.1. Секция сайта 1. Classes -->
-        <section class="section_1_classes">
-            <div class="p_section_1">
-                <p class="p_nav">Classes</p>
-                <h2>What actually I love to do</h2>\
-            </div>  
-                <img src="./assets/Background_mini.svg" alt="mini">
-                <h3 class="classes_1">Privet classes</h3>
+        <!-- 2.1. Секция сайта Classes -->
+        <section class="section_2">
+            <div class="p_nav">Classes</div>
+            <h2>What actually I love to do</h2>
+            <img src="./assets/Background_mini.svg" alt="mini" class="mini_pic_1">
+            <img src="./assets/Background_mini.svg" alt="mini" class="mini_pic_2">
+            <img src="./assets/Background_mini.svg" alt="mini" class="mini_pic_3">
+            <h3 class="classes_1">Privete classes</h3>
+            <h3 class="classes_2">Group classes</h3>
+            <h3 class="classes_3">Public classes</h3>
                 <article class="classes_1_article">If you are looking to accelerate your health and well-being, the 1:1 classes are the fastest way to get results. With individual sessions, we can exercise at your level and progress the difficulty as you improve. Private sessions also allow you to develop a rapport with me so I will know when you are having a good day and be pushed a bit further and gain an understanding of what motivates you helping you to gain the best results. </article>
-                <img src="./assets/Background_mini.svg" alt="mini">
-                <h3 class="classes_2">Group classes</h3>
                 <article class="classes_2_article">Private Pilates session with me for three people. The session is guided by the group's wellness goals. The session includes a mix of reformer, tower, barrel equipment, and/or small props.</article>
-                <img src="./assets/Background_mini.svg" alt="mini">
-                <h3 class="classes_3">Public classes</h3>
-                <article class="classes_3_article">Mixed Level Pilates classes in Trumbull Physical Therapy and Welness Ceter. We are a synergistic group of independent practitioners whose mission is to provide individualized healing in a supportive environment. </article>
-        </section>
-        <!-- 2.2. Секция сайта 2. About me -->
-        <section class="section_2_about">
-        <!-- ?нужен ли этот div? -->
-            <div class="p_section_2">
-                <p class="p_nav">About Me</p>
-                <div>
-                    <h3>Work skills</h3>
-                    <img src="/" alt="1">
-                    <article>
-                        <ul>
-                            <li>Pilates Mat & Reformer Techniques</li>
-                            <li>Exercise Program Development</li>
-                            <li>Anatomy and Physiology Knowledge</li>
-                            <li>Client Fitness Assessments</li>
-                            <li>Group Class Instruction</li>
-                            <li>Customer Relationship Management</li>
-                        </ul>
-                        </article>
-                </div>
-                <div>
-                    <h3>Work experience</h3>
-                    <img src="/" alt="2">
-                    <article>
-                        <ul>
-                            <li>Fitness Centers & Gyms</li>
-                            <li>Pilates Studios</li>
-                            <li>Physical Therapy Clinics</li>
-                            <li>Community Centers</li>
-                            <li>Online Coaching Platforms</li>
-                            <li>Private In-Home Sessions</li>
-                        </ul>
-                    </article>
-                </div>
-                <h3>Education</h3>
-                <img src="/" alt="3">
-                <article>
-                    <ul>
-                        <li> Certificat of National Pilates Program (NPCP)</li>
-                        <li>Pilates Method Alliance (PMA) Certificat</li>
-                        <li>Physical Therapy Clinics</li>
-                        <li>Certificat of Pilates Method Alliance (PMA) </li>
-                        <li>Certificat of Balanced Body Comprehensive</li>
-                        <li>Certificat of STOTT Pilates</li>
-                        <li>Certificat of Peak Pilates Comprehensive</li>
-                    </ul>
-                </article>
-            </div>
-        </div>
-        </section>
-
-        <!-- 2.3. Секция сайта 3. Scheduele -->
-        <section class="section_3_scheduele">
-            <div class="p_section_3">
-                <p class="p_nav">Scheduele</p>
-                <nav>/</nav>
-                <h1></h1>
-                <nav>//</nav>
-            </div>
-        </section>
-    
-         <!-- 2.4. Секция сайта 4. Contact Me -->
-        <section class="section_4_cntact">4
-            <div class="p_section_4">
-                <p class="p_nav">Contact Me</p>
-                <h2>Let me know if you want to talk about a potential collaboration or to be my client. 
-                    I'm available for freelance work.</h2>
-                <!-- email glendabrorick@gmail.com-->
-                <form action="/">/</form>
-            </div>
-        </section>
+                <article class="classes_3_article">Mixed Level Pilates classes in Trumbull Physical Therapy and Welness Ceter. We are a synergistic group of independent practitioners whose mission is to provide individualized healing in a supportive environment. </article>    
+            </section>
+        <!-- 2.2. Секция сайта About me -->
+        <section class="section_3">
+            <div class="p_nav">About Me</div>
+            <h2>Big Deal With</h2>
+            <img src="./assets/Background_mini.svg" alt="mini" class="mini_pic_1">
+            <img src="./assets/Background_mini.svg" alt="mini" class="mini_pic_2">
+            <img src="./assets/Background_mini.svg" alt="mini" class="mini_pic_3">
+            <h3 class="classes_1">Work skills</h3>
+            <h3 class="classes_2">Work experience</h3>
+            <h3 class="classes_3">Education</h3>
+            <ul class="about_me_1_article">
+                <li>Pilates Mat & Reformer Techniques</li>
+                <li>Exercise Program Development</li>
+                <li>Anatomy and Physiology Knowledge</li>
+                <li>Client Fitness Assessments</li>
+                <li>Group Class Instruction</li>
+                <li>Customer Relationship Management</li>
+            </ul>
+            <ul class="about_me_2_article">
+                <li>Fitness Centers & Gyms</li>
+                <li>Pilates Studios</li>
+                <li>Physical Therapy Clinics</li>
+                <li>Community Centers</li>
+                <li>Online Coaching Platforms</li>
+                <li>Private In-Home Sessions</li>
+            </ul>
+            <ul class="about_me_3_article">
+                <li> Certificat of National Pilates Program (NPCP)</li>
+                <li>Pilates Method Alliance (PMA) Certificat</li>
+                <li>Physical Therapy Clinics</li>
+                <li>Certificat of Pilates Method Alliance (PMA) </li>
+                <li>Certificat of Balanced Body Comprehensive</li>
+                <li>Certificat of STOTT Pilates</li>
+                <li>Certificat of Peak Pilates Comprehensive</li>
+            </ul>
+            </section>
+    </section>
+    <!-- 2.3. Секция сайта Contact Me -->
+    <section class="section_4">
+        <div class="p_nav">Contact Me</div>
+        <h3 class="s_4">Let me know if you want to talk about a potential collaboration or to be my client. 
+            I'm available for freelance work.</h3>
+        <a href="mailto:glendabrorick@gmail.com" class="mail">glendabrorick@gmail.com</a>    
+        
+        <form method="post" class="name">
+            <p><label for="name">What’s your name?</label>
+            <input type="text" id="name" name="name" class="input" required></p>
+        </form>
+        <form method="post" class="email">
+            <p><label for="email">Your email</label>
+            <input type="email" id="email" name="email" class="input" required></p>
+        </form>
+        <form method="post" class="tasks">
+            <p><label for="tasks">Tell me about your tasks</label>
+            <input type="text" id="tasks" name="tasks" class="input" required></p>
+        </form> 
+            <button class="send">Send</button>
+        </form>
+    </section>
     </main>
-
-        <!-- 3. Footer сайта со ссылками на соц.сети и навигацией -->
-        <footer>
-            <div class="p_section_5">
-                <h4>Let’s be Friends</h4>
-                <img src="./assets/back_color_mini.png" alt="4">
-                <img src="./assets/back_color_mini.png" alt="5">
-                <img src="./assets/back_color_mini.png" alt="6">
-            </div>
+    <!-- 3. Footer сайта со ссылками на соц.сети -->
+    <footer>
+        <div class="section_5">
+            <h3 class="s_5">Let’s be Friends</h3>
+                <img src="./assets/Background_mini.svg" alt="facebook" class="mini_pic_4" width=30%>
+                <img src="./assets/Background_mini.svg" alt="insagram" class="mini_pic_5" width=30%>
+                <img src="./assets/Background_mini.svg" alt="linkedin" class="mini_pic_6" width=30%>
+        </div>
     </footer>
-
 </body>
 </html>

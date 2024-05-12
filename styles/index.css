@@ -1,284 +1,506 @@
 /* Сброс настроек по умолчанию */
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
-/* Переменные для шрифтов */
+/* Переменные для шрифтов и цветов */
 :root {
   --font-family: "Red Hat Display", sans-serif;
   --second-family: "Roboto", sans-serif;
   --third-family: "Montserrat", sans-serif;
+  --mainColor: #8643dc;
+  --second-color: #25202f;
+  --third-color: #47444e;
 }
-/* Шрифты по макету Figma*/
-.roboto-regular {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-.roboto-medium {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-.roboto-bold {
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-// <weight>: Use a value from 300 to 900 */
-.red-hat-display {
-  font-family: "Red Hat Display", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-.montserrat {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* .part_1{
-  width: 100%;	height: 60hv;
-  background: rgb(172, 134, 172);
-  outline: 2px solid #671447; 
-  border: 3px solid #050202; 
-} */
-
-.p_nav {
-  font-family: var(--font-family);
-font-weight: 400;
-font-size: 18px;
-color: #8643dc;
-}
-h2 {
-  font-family: var(--font-family);
-font-weight: 700;
-font-size: 36px;
-color: #25202f;
-}
-h3 {
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 24px;
-  color: #25202f;
-}
-article {
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 200%;
-  color: #47444e;
-}
+/* Общие параметры */
 body {
-  width: 100%;
-  padding: 20px;
-}
-.burger {
-  position: relative;
-  border: none;
-  background: transparent;
-  width: 40px;
-  height: 26px;
-}
-.burger::before,
-.burger::after {
-  content: '';
-  left: 0;
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 4px;
-  border-radius: 10px;
-  background: #000;
-}
-.burger::before {
-  top: 0;
-  box-shadow: 0 11px 0 #000;
-}
-.burger::after {
-  bottom: 0;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 16px;
 }
 /*1. Шапка сайта: лого, навигация, фото, приветсивие, коммуникация*/
-
-/* Grid контейнер .header */
-  .header {
-    display: grid;
-    grid-template-columns: 5% 40% 1fr 10%;
-    grid-template-rows: 15% 1fr;
-    grid-gap: 5px;
-    align-content: space-evenly;
-    height: 50vh;
-    padding: 0px;
-  }
-  
-  /* 1.1. Логотип: вставка текста (буква G от имени Glenda) поверх картинки. */
-  /* Логотип - верхний элемент grid контейнера .header */
-.text_G {
-  grid-row: 1/2;
-  grid-column: 1/2;
+header {
+  /* background-color: blueviolet; */
+  width: 100%;
+  height: 70vh;
 }
-
-  /*Вставка текста (буква G от имени Glenda) поверх картинки */
+/* Grid контейнер */
+.section_1 {
+  display: grid;
+  border: 1px solid black;
+  grid-template-columns: fit-content(10%) fit-content(40%) 1fr 10%;
+  grid-template-rows: 20% fit-content(1fr);
+  grid-gap: 5px;
+  align-content: space-evenly;
+}
+/* 1.1. Логотип: вставка текста (буква G от имени Glenda) поверх картинки. */
+/* Логотип - верхний элемент grid контейнера */
+.text_G {
+  grid-area: 1/1/2/2;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+/*Вставка текста (буква G от имени Glenda) поверх картинки */
 .text_G_over {
-  background: url('/assets/logo.png'); /* Путь к картинке */
+  background: url('../assets/logo.png'); /* Путь к картинке */
   background-repeat: no-repeat; /* Фон не повторяется */
   width: 100%;
+  max-width: 100%; /* адаптивный дизайн: картинка привязана к размеру родителя  */
   height: 100%;
-  color: white;
-  font-family: var(--font-family);
+  color: #fff;
+  font-family: var(--third-family);
   padding: 3px;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 30px;
 }
-
 /* 1.2. Навигация-главное меню */
-  /* Главное меню: flex контейер - верхний элемент grid контейнера .header*/
+/* Главное меню: flex контейер - верхний элемент grid контейнера */
 .main_menu {
-  grid-row: 1/2;
-  grid-column: 2/3;
+  grid-area: 1/2/2/3;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-start;
+  align-content: center;
 }
-nav ul {
-    display: flex;
-    list-style: none;
-}
-nav li {
-    margin-right: 40px;
-}
-nav a {
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 20px;
-  color: #7e7f86;
+.nav_link {
+  line-height: 112%;
   text-decoration: none;
-}
-nav {
-    margin-top: 7px;
-    padding-top: 10px;
-}
-
-/* 1.3. Приветствие с кнопкой коммуникации Let's talk */
-  /* Привествие - нижний элемент grid контейнера .header с вложенным grid контейнером .greetings */
-.greetings_area {
-  grid-row: 2/3;
-  grid-column: 1/3;
-  display: grid;
-}
-.greetings {
-  grid-template-columns: auto;
-  grid-template-rows: 23% 23% 23% 23%;
+  padding: 0 10px;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 24px;
+  font-size: 12px;
   color: #7e7f86;
 }
-button {
-  border-color: none;
+.nav_link:hover {
+  color: var(--second-color);
+}
+/* 1.3. Приветствие с кнопкой коммуникации Let's talk */
+/* Привествие - нижний элемент grid контейнера с вложенным grid контейнером .greetings */
+.greetings_area {
+  grid-area: 2/1/3/3;
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr);
+  grid-template-rows: 10% 1fr 10% 70%;
+  gap: 5px;
+  justify-content: start;
+  align-content: start;
 }
 .talk {
+  border: none;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
   color: #fff;
   border-radius: 100px;
-  width: 200px;
-  height: 60px;
-  background: #8643dc;
+  width: 150px;
+  height: 40px;
+  background: var(--mainColor);
 }
-
-  /* Элементы вложенного grid контейнера .greeteengs */
+/* Элементы вложенного grid контейнера .greeteengs */
 .hello {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 24px;
-  line-height: 120%;
+  font-size: 20px;
   color: #666;
 }
 h1 {
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 60px;
-  font-style: bold;
-  color: #25202f;
-  }
+  font-size: 50px;
+  color: var(--second-color);
+}
 .profession {
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 24px;
-  color: #25202f;
+  font-size: 20px;
+  color: var(--second-color);
 }
-
 /* 1.4. Фото тренера на фоне */
-  /* Фото тренера - центральный элемент grid контейнера .header */
+/* Фото тренера - центральный элемент grid контейнера .header */
+/* Не получается справиться с этими картинками при увеличении экрана */
 .photo_on_background {
   grid-area: 1/3/3/4;
   display: flex;
-  background: url(/assets/Background_mini.svg) no-repeat;
+  width: 100%;
+  background: url(../assets/Background_mini.svg) no-repeat;
   background-size: contain;
+
+  height: 100%;
+  max-width: 100%; 
+  max-height: 100%;
+  flex-flow: wrap;
+
   align-items: center;
+  flex-direction: column;
+  align-items: stretch;
 }  
 .photo {
-  grid-area: 1/3/3/4;
-  width:  100%;
-  padding: 65px;
-  margin: -25px;
 }
+/* .text_G {
+  grid-area: 1/1/2/2;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+/*Вставка текста (буква G от имени Glenda) поверх картинки 
+.text_G_over {
+  background: url('../assets/logo.png'); /* Путь к картинке 
+  background-repeat: no-repeat; /* Фон не повторяется 
+  width: 100%;
+  max-width: 100%; /* адаптивный дизайн: картинка привязана к размеру родителя  
+  height: 100%;
+  color: #fff;
+  font-family: var(--third-family);
+  padding: 3px;
+  font-weight: 700;
+  font-size: 30px;
+} */
 
 /* 1.5. Бургер меню */
-/*  Бургер меню (позже станет настоящим меню - элемент grid контейнера .header */
 .burger_menu {
-  grid-area: 1/4/3/5;
+  font-family: var(--font-family);
+  font-weight: 200;
+  font-size: 15px;
+  color: #fff;
+}
+/*  Взято здесь: https://www.mobila.name/post/53eb5a219dcff со моими изменениями*/
+/* Переключаемая боковая панель навигации выдвигающаяся справа */
+.nav {
+/* ? grid-area: 1/4/3/5; ?*/
+  width: 10em;
+  min-width: 5em;
+/* фиксируем и выставляем высоту панели на максимум */
+  height: 100em;
+  position: fixed;
+  top: 0;   
+/* сдвигаем (прячем) панель относительно правого края страницы */
+  right: -320px;
+  padding: 15px 20px;
+/* плавный переход смещения панели */
+  -webkit-transition: right 0.3s;
+  -moz-transition: right 0.3s;
+  transition: right 0.3s;
+/* цвет фона панели */
+  background: var(--mainColor);
+/* поверх других элементов */
+  z-index: 2000;
+}
+nav :hover {
+  color: #7e7f86;
+}
+/* Кнопка переключения панели тег <label> */
+.nav-toggle {
+/* абсолютно позиционирую */
+  position: absolute;
+/* относительно правого края панели */
+  right: 320px;
+  padding: 0.5em;
+/* цвет фона переключателя (чаще вчего в соответствии с цветом фона панели) */
+  background: inherit;
+/* цвет текста */
+  color: white;
+/* вид курсора */
+  cursor: pointer;
+/* всегда поверх других элементов страницы */
+  z-index: 2001;
+/* анимирование цвет текста при наведении */
+  -webkit-transition: color .25s ease-in-out;
+  -moz-transition: color .25s ease-in-out;
+  transition: color .25s ease-in-out;
+}
+/* текст кнопки (символ Unicode (TRIGRAM FOR HEAVEN)) */
+.nav-toggle:after {
+  content: '\2630';
+  text-decoration: none;
+}
+.nav_hide {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 10px;
+}
+/* цвет текста при наведении */
+.nav-toggle:hover {
+  color: #7e7f86;
+}
+/* Скрытый чекбокс (флажок)невидим и недоступен, имя селектора атрибут флажка */
+[id='nav-toggle'] {
+  position: absolute;
+  display: none;
+}
+/* изменение положения переключателя при просмотре на мобильных устройствах когда навигация раскрыта, распологаем внутри панели*/
+[id='nav-toggle']:checked ~ .nav > .nav-toggle {
+  left: auto;
+  right: 2px;
+}
+/* Когда флажок установлен, открывается панель используем псевдокласс: checked */
+[id='nav-toggle']:checked ~ .nav {
+  right: 0;
+  box-shadow:-4px 0px 20px 0px rgba(0,0,0, 0.5);
+  -moz-box-shadow:-4px 0px 20px 0px rgba(0,0,0, 0.5);
+  -webkit-box-shadow:-4px 0px 20px 0px rgba(0,0,0, 0.5);
+  overflow-y: auto;
+}
+/* смещение контента страницы на размер ширины панели */
+/* [id='nav-toggle']:checked ~ main > article {
+-webkit-transform: translateX(-320px);
+-moz-transform: translateX(-320px);
+transform: translateX(-320px);
+} */
+/* изменение символа переключателя, привычный крестик (MULTIPLICATION X) */
+[id='nav-toggle']:checked ~ .nav > .nav-toggle:after {
+  content: '\2715';
+}
+/* 2. Основной контент сайта */
+/* 2.1. Секция сайта Classes */
+.section_2 {
+  display: grid;
+  border: 1px solid black;
+  margin-bottom: 60px;
+  grid-template-columns: 5% 1fr 5% 1fr 5% 1fr;
+  grid-template-rows: 15% 15% 15% fit-content(1fr);
+  grid-gap: 5px;
+  outline: 2px #8643dc;
+  align-content: space-evenly;
+}
+.p_nav {
+  grid-area: 1/1/2/3;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--mainColor);
+}
+h2 {
+  grid-area: 2/1/3/4;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--second-color);
+}
+.mini_pic_1 {
+  grid-area: 3/1/4/2;
+  display: flex;
   width: 100%;
+  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
 }
-.burger_menu_link {
-  /
+.mini_pic_2 {
+  grid-area: 3/3/4/4;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
 }
-
-  /* 2. Основной контент сайта */
-
-   /* 2.1. Секция сайта 1. Classes */
-   .section_1_classes {
-    display: grid;
-    grid-template-columns: 5% 1fr 5% 1fr 5% 1fr;
-    grid-template-rows: 15% 10% fr;
-    outline: 2px #8643dc;
-   }
-   .p_section_1 {
-    grid-column: 1/4;
-    grid-row: 1/2;
-   }
-   .classes_1 {
-    grid-column: 2/3;
-    grid-row: 2/3;
-   }
-   .classes_2 {
-    grid-column: 4/5;
-    grid-row: 2/3;
-   }
-   .classes_3 {
-    grid-column: 6/7;
-    grid-row: 2/3;
-   }
-   .classes_1_article {
-    grid-column: 1/3;
-    grid-row: 3/4;
-   }
-   .classes_2_article {
-    grid-column: 3/5;
-    grid-row: 3/4;
-   }
-   .classes_3_article {
-    grid-column: 5/7;
-    grid-row: 3/4;
-   }
-   /* 2.2. Секция сайта 2. About me */
-   
-
-   /* 2.3. Секция сайта 3. Scheduele */
-
-   /* 2.4. Секция сайта 4. Contact Me */
-
-  /* 3. Footer сата со ссылками на соц.сети и навигацией */
+.mini_pic_3 {
+  grid-area: 3/5/4/6;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
+}
+h3 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--second-color);
+}
+.classes_1 {
+  grid-area: 3/2/4/3;
+}
+.classes_2 {
+  grid-area: 3/4/4/5;
+}
+.classes_3 {
+  grid-area: 3/6/4/7;
+}
+.classes_1_article {
+  grid-area: 4/1/5/3;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 200%;
+  color: var(--third-color);
+}
+.classes_2_article {
+  grid-area: 4/3/5/5;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 200%;
+  color: var(--third-color);
+}
+.classes_3_article {
+  grid-area: 4/5/5/7;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 200%;
+  color: var(--third-color);
+}
+/* 2.2. Секция сайта About me */
+.section_3 {
+  display: grid;
+  border: 1px solid black;
+  margin-bottom: 60px;
+  grid-template-columns: 5% 1fr 5% 1fr 5% 1fr;
+  grid-template-rows: 15% 15% 15% fit-content(1fr);
+  grid-gap: 5px;
+  outline: 2px #8643dc;
+  align-content: space-evenly;
+}
+::marker {
+  color: var(--third-color);
+  font-size: 1em;
+}
+.about_me_1_article {
+  grid-area: 4/1/5/3;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 200%;
+  color: var(--third-color);    
+}
+.about_me_2_article {
+  grid-area: 4/3/5/5;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 200%;
+  color: var(--third-color);
+}
+.about_me_3_article {
+  grid-area: 4/5/5/7;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 200%;
+  color: var(--third-color);
+}
+/* 2.3. Секция сайта Contact Me */
+.section_4 {
+  display: grid;
+  border: 1px solid black;
+  margin-bottom: 60px;
+  grid-template-columns: 50% 1fr;
+  grid-template-rows: 1fr fit-content(1fr) 1fr 1fr 1fr 1fr;
+  grid-gap: 5px;
+  outline: 2px #8643dc;
+  align-content: space-evenly;
+}
+.s_4 {
+  grid-area: 2/1/3/2;
+}
+.mail {
+  grid-area: 2/2/3/3;
+  display: flex;
+  justify-content: flex-end;
+  color: var(--mainColor);
+  cursor: pointer;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: lowercase;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+form {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  color: #a8a0b0;
+}
+.name {
+  grid-area: 3/1/4/3;
+}
+.email {
+  grid-area: 4/1/5/3;  
+}
+.tasks {
+  grid-area: 5/1/6/3;
+}
+.input {
+  border:none!important;
+  margin: 10px 0;
+  height: 30px;
+  border-color: #a8a0b0;
+  border-bottom-width: 2px;
+  border-style: solid;
+  outline: none;
+  /* -webkit-border-bottom: 1px solid #a8a0b0!important;
+  -webkit-tap-highlight-color: transparent; */
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  user-select: none;
+}
+.send {
+  grid-area: 6/1/7/2;
+  border: none;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  border-radius: 100px;
+  width: 150px;
+  height: 40px;
+  background: var(--mainColor);
+}
+/* 3. Footer сайта со ссылками на соц.сети */
+.section_5 {
+  display: grid;
+  padding: 10px;
+  border: 1px solid black;
+  margin-bottom: 60px;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows: fit-content(1fr) 1fr;
+  grid-gap: 5px;
+  outline: 2px #8643dc;
+  align-content: space-evenly;
+}
+.s_5 {
+  grid-area: 1/1/2/4;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.mini_pic_4 {
+  grid-area: 2/1/3/2;
+  display: flex;
+  align-items:flex-end;
+  flex-direction: column;
+}
+.mini_pic_5 {
+  grid-area: 2/2/3/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mini_pic_6 {
+  grid-area: 2/3/3/4;
+  display: flex;
+  align-items:flex-start;
+  flex-direction: column;
+}
+  /* background: linear-gradient(
+      to left,
+      rgba(187, 133, 255, 0.7) 70%,
+      rgba(255, 177, 222, 0.7) 70%,
+  ); */
+/* 
+@media screen and (min-width:375px){
+.photo_on_background {
+  grid-area: 3/1/4/3;
+  /* height: 25vh; 
+}
+} */
